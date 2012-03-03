@@ -5,10 +5,10 @@ Feature: Simple searching
 
   @google
   Scenario: Searching on Google
-    When I navigate to "google.com"
-    Then I should see the "google" search bar
+    When I navigate home
+    Then I should see the search bar
 
   @yahoo
   Scenario: Searching on Yahoo
-    When I navigate to "yahoo.com"
-    Then I should see the "yahoo" search bar
+    When I navigate home
+    Then I should see the search bar
