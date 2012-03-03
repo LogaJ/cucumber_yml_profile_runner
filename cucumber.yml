@@ -1,2 +1,2 @@
-google: -t ~@yahoo -r features --color
-yahoo: -t ~@google -r features --color
+google: -t ~@yahoo APP='google' -r features --color
+yahoo:  -t ~@google APP='yahoo' -r features --color
