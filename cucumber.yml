@@ -1,0 +1,2 @@
+google: -t ~@yahoo -r features --color
+yahoo: -t ~@google -r features --color
