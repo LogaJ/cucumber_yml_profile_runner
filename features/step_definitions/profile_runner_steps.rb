@@ -5,5 +5,5 @@ When /^I run features with the "([^"]*)" profile$/ do |profile_name|
 end
 
 Then /^I should see the test results$/ do
-    pending # express the regexp above with the code you wish you had
+  page.should have_content 'Feature: Simple searching'
 end

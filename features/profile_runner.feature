@@ -7,4 +7,9 @@ Feature: Using web interface to run profiles
   Scenario: Selecting a profile from a list
     When I run features with the "google" profile
     Then I should see the test results
+
+  @localhost
+  Scenario: Selecting a profile from a list
+    When I run features with the "yahoo" profile
+    Then I should see the test results
     
