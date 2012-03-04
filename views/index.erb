@@ -1,10 +1,9 @@
-<html>                
+<form action="/test_runner" method="POST">
   <head><title>Cucumber Profile Runner App</title></head>     
-  <body>     
-      <select name="profile_selector" id="profile_selector">
-        <% @list_of_profiles.each do |profile| %>
-          <option value="<%= profile %>"><%= profile %></option>
-        <% end %>
-      </select>
-  </body>                                        
-</html> 
+  <select name="profile_selector" id="profile_selector">
+    <% @list_of_profiles.each do |profile| %>
+      <option value="<%= profile %>"><%= profile %></option>
+    <% end %>
+  </select>
+  <input type="submit" name="submit" value="Run Tests">
+</form>

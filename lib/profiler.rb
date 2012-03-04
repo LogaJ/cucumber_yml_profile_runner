@@ -6,12 +6,18 @@ class Profiler
 
     File.open(cucumber_yml_file) do |file|
       file.map do |line| 
-        profiles << line.match(/\w+:/).to_s.gsub(/:/,'').gsub(/default/,'') 
+        profiles << line.match(/\w+:/).to_s.gsub(/:/,'').gsub(/default/,'')
         profiles.delete_if(&:empty?)
       end
     end
 
     return profiles
+  end
+
+  def self.run_tests with_profile
+    run_command = "cucumber -p #{with_profile}"
+
+    system run_command
   end
 
   private
