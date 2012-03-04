@@ -15,9 +15,25 @@ class Profiler
   end
 
   def self.run_tests with_profile
+    f = File::open('lib/log.log', 'w')
     run_command = "cucumber -p #{with_profile}"
+    begin
+      original_stout_message = STDOUT.clone
+      STDOUT.reopen f
+      system run_command
+    ensure
+      STDOUT.reopen original_stout_message
+    end
+  end
 
-    system run_command
+  def self.display_test_results
+    log_lines = []
+    File.open('lib/log.log') do |file|
+      file.map do |line|
+        log_lines << line
+      end
+    end
+    return log_lines
   end
 
   private

@@ -9,6 +9,9 @@ get '/' do
   erb :index
 end
 
-post '/test_runner' do
+post '/results' do
   @test_runner = Profiler.run_tests params[:profile_selector]
+  @test_results = Profiler.display_test_results
+
+  erb :results
 end
