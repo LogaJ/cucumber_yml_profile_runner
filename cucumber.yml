@@ -1,2 +1,3 @@
-google: -t ~@yahoo APP='google' -r features --color
-yahoo:  -t ~@google APP='yahoo' -r features --color
+default: -t ~@yahoo -t ~@google APP='localhost' -r features --color
+google:  -t ~@yahoo -t ~@localhost APP='google' -r features --color
+yahoo:   -t ~@google -t ~@localhost APP='yahoo' -r features --color
