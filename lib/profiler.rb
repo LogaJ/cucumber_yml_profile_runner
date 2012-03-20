@@ -1,5 +1,5 @@
 class Profiler
-  def self.get_profiles_from_cucumber_yml_file
+  def get_profiles_from_cucumber_yml_file
 
     cucumber_yml_file = path_to_cucumber_yml_file
     profiles = []
@@ -37,7 +37,7 @@ class Profiler
   end
 
   private
-  def self.path_to_cucumber_yml_file
+  def path_to_cucumber_yml_file
     current_directory = Dir.pwd
     yml_directory = current_directory.gsub(/\/lib/,'') + '/cucumber.yml'
   end
